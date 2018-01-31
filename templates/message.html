@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title>Message</title>
+    {% endif %}
+</head>
+<body>
+{% if name %}
+    <p>Hello, <strong>{{ name }}</strong></p>
+{% endif %}
+{% if message %}
+    <p>{{ message }}</p>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+        <title>{{ title }}</title>
+    {% else %}
+        <title>Message</title>
+    {% endif %}
+</head>
+<body>
+
+{% if rout %}
+    <form typeof="/*" action="/{{ rout }}/" method="post">
+        <p>UserName: <label>
+            <input type="text" name="username">
+        </label></p>
+        <p>Password: <label>
+            <input type="password" name="password">
+        </label></p>
+        <button type="submit" value="{{ rout }}">{{ rout }}</button>
+    </form>
+{% endif %}
+
+{% if message %}
+    <p></p>
+    <p>{{ message }}</p>
+{% endif %}
+
+</body>
+</html>
