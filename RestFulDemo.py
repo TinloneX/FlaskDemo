@@ -27,7 +27,6 @@ class User(Base):
 
 
 def response2(state=0, message='error', data=None):
-    print('xxxxx', jsonify({'state': state, 'message': message, 'data': data}))
     return jsonify({'state': state, 'message': message, 'data': data})
 
 
@@ -49,7 +48,6 @@ def safe_insert(user=None, username='Alex'):
 def json_array(datas):
     L = []
     for d in datas:
-        print('xxx', d.info())
         L.append(d.info())
     return L
 
@@ -58,10 +56,7 @@ def json_array(datas):
 def users_about():
     if request.method == 'GET':
         datas = session_db.query(User).all()
-        L = []
-        for d in datas:
-            L.append(d.info())
-        return response2(1, 'success', L)
+        return response2(1, 'success', json_array(datas))
     else:
         name = request.values.get('username')
         sly = request.values.get('salary')
@@ -71,5 +66,5 @@ def users_about():
 
 
 if __name__ == '__main__':
-    app.debug = True
+    app.debug = False
     app.run(host='0.0.0.0', port=5000)

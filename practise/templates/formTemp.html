@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title>{{title}}</title>
+    {% else %}
+    <title>Hello</title>
+    {% endif %}
+</head>
+<body>
+<form action={{action}} method="post">
+    <p>UserName : <input type="text" name="username">
+    <p>PassWord : <input type="password" name="password">
+    <p><input type="submit" value={{text}}>
+
+</form>
+
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% if title %}
+    <title>{{title}}</title>
+    {% else %}
+    <title>Hello</title>
+    {% endif %}
+</head>
+<body>
+<p>
+{% if message %}
+{{message}}
+{% endif %}
+{% if href and text %}
+<a href={{href}}>{{text}}</a>
+{% endif %}
+</p>
+</body>
+</html>
